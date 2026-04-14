@@ -207,3 +207,15 @@ th, td {
   margin-bottom: 0.75rem;
   display: block;
 }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+  display: block;
+}
