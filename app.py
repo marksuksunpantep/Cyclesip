@@ -29,7 +29,8 @@ PRODUCTS: Dict[int, Product] = {
         phase='Menstrual Phase',
         price=0.00,
         short_desc='Frozen strawberries, blueberries, spinach, and Greek yogurt.',
-        description='Frozen strawberries: 150 g | Frozen blueberries: 60 g | Frozen spinach: 25 g | Frozen Greek yogurt: 25 g | Ground flaxseed: 5 g | Add when blending: orange juice | Optional honey',
+        description='Made to support you during your period, this blend includes iron-rich ingredients to help replenish what’s lost through blood, along with leafy greens and vitamin C from citrus to support energy and immune function. Designed with input from OB-GYNs and nutritionists, it focuses on simple, nourishing ingredients when your body needs it most.
+',
         ingredients=[
             'Frozen strawberries: 150 g',
             'Frozen blueberries: 60 g',
@@ -47,7 +48,8 @@ PRODUCTS: Dict[int, Product] = {
         phase='Follicular Phase',
         price=0.00,
         short_desc='Frozen mango, pineapple, banana, spinach, and chia seeds.',
-        description='Frozen mango: 140 g | Frozen pineapple: 70 g | Frozen banana: 40 g | Frozen spinach: 25 g | Chia seeds: 5 g | Add when blending: almond milk',
+        description='As your energy starts to come back, this blend is packed with fresh fruits, greens, and seeds to help you feel refreshed and recharged. Backed by OB-GYN and nutritionist insights, it supports your body with light, nutrient-dense ingredients during this rebuilding phase.
+',
         ingredients=[
             'Frozen mango: 140 g',
             'Frozen pineapple: 70 g',
@@ -64,7 +66,8 @@ PRODUCTS: Dict[int, Product] = {
         phase='Ovulatory Phase',
         price=0.00,
         short_desc='Frozen avocado, banana, spinach, hemp seeds, and vanilla protein.',
-        description='Frozen avocado: 70 g | Frozen banana: 100 g | Frozen spinach: 25 g | Hemp seeds: 10 g | Vanilla protein powder: 45 g | Cinnamon: 1 g | Add when blending: almond milk',
+        description='This blend is all about balance and fuel, with healthy fats, protein, and greens to keep your energy steady and support hormone health. Created with guidance from OB-GYNs and nutritionists, it’s designed to help you feel your best during your most energized phase.
+',
         ingredients=[
             'Frozen avocado: 70 g',
             'Frozen banana: 100 g',
@@ -82,7 +85,9 @@ PRODUCTS: Dict[int, Product] = {
         phase='Luteal Phase',
         price=0.00,
         short_desc='Frozen banana, oats, Greek yogurt, cacao, and protein powder.',
-        description='Frozen banana: 110 g | Oats: 20 g | Frozen Greek yogurt: 25 g | Cacao powder: 10 g | Protein powder: 45 g | Cinnamon: 1 g | Add when blending: almond milk and almond butter',
+        description='
+When PMS symptoms tend to hit, this blend focuses on fiber, complex carbs, and magnesium-rich ingredients to help with bloating, fatigue, and cravings. Based on OB-GYN and nutritionist recommendations, it supports balanced energy and helps you feel more like yourself.
+',
         ingredients=[
             'Frozen banana: 110 g',
             'Oats: 20 g',
