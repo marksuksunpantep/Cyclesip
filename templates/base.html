@@ -9,7 +9,10 @@
 <body>
   <header class="site-header">
     <div class="container nav-wrap">
-      <a class="brand" href="{{ url_for('home') }}">Cyclesip</a>
+      <a href="{{ url_for('home') }}" class="brand">
+  <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Cyclesip logo" class="logo">
+  <span>Cyclesip</span>
+      </a>
       <nav>
         <a href="{{ url_for('home') }}">Home</a>
         <a href="{{ url_for('products') }}">Shop</a>
