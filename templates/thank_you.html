@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Thank You | Cyclesip{% endblock %}
+{% block content %}
+<div class="card thank-you">
+  <p class="eyebrow">Order complete</p>
+  <h1>Thanks, {{ order.name }}.</h1>
+  <p>Your mock order for {{ order.item_count }} item(s) totaling ${{ '%.2f'|format(order.total) }} has been placed.</p>
+  <p>A confirmation would normally be sent to {{ order.email }}.</p>
+  <a class="button" href="{{ url_for('products') }}">Continue shopping</a>
+</div>
+{% endblock %}

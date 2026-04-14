@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Shop | Cyclesip{% endblock %}
+{% block content %}
+<section class="page-header">
+  <p class="eyebrow">Shop</p>
+  <h1>Phase-based blends and subscription options</h1>
+  <p>Browse the prototype catalog below.</p>
+</section>
+
+<div class="card-grid">
+  {% for product in products %}
+    <article class="card" {% if product.id == 5 %}id="subscription"{% endif %}>
+      <p class="phase">{{ product.phase }}</p>
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.short_desc }}</p>
+      <p class="price">${{ '%.2f'|format(product.price) }}</p>
+      <div class="card-actions stacked-mobile">
+        <a class="button secondary" href="{{ url_for('product_detail', product_id=product.id) }}">View product</a>
+        <form method="post" action="{{ url_for('add_to_cart', product_id=product.id) }}">
+          <input type="hidden" name="quantity" value="1">
+          <button class="button" type="submit">Add to cart</button>
+        </form>
+      </div>
+    </article>
+  {% endfor %}
+</div>
+{% endblock %}

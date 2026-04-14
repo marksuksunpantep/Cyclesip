@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}Home | Cyclesip{% endblock %}
+{% block content %}
+<section class="hero">
+  <div>
+    <p class="eyebrow">Cycle-based nutrition</p>
+    <h1>Fuel each phase with a simpler smoothie routine.</h1>
+    <p class="hero-copy">A basic e-commerce prototype for a subscription smoothie brand built around the menstrual cycle: menstrual, follicular, ovulatory, and luteal.</p>
+    <div class="hero-actions">
+      <a class="button" href="{{ url_for('products') }}">Shop blends</a>
+      <a class="button secondary" href="{{ url_for('products') }}#subscription">View subscription</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <h3>How it works</h3>
+    <ol>
+      <li>Select the plan that fits your routine.</li>
+      <li>Add your selected plan to your cart.</li>
+      <li>Complete the checkout to place your order.</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <h2>Featured blends</h2>
+  <div class="card-grid">
+    {% for product in featured %}
+      <article class="card">
+        <img src="{{ url_for('static', filename=product.image) }}" alt="{{ product.name }}" class="blend-image">
+        <p class="phase">{{ product.phase }}</p>
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.short_desc }}</p>
+        
+        <div class="card-actions">
+          <a class="button secondary" href="{{ url_for('product_detail', product_id=product.id) }}">Details</a>
+          {% if product.price > 0 %}
+            <form method="post" action="{{ url_for('add_to_cart', product_id=product.id) }}">
+              <button class="button" type="submit">Add to cart</button>
+            </form>
+          {% endif %}
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

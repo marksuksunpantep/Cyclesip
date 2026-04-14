@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}Cart | Cyclesip{% endblock %}
+{% block content %}
+<section class="page-header">
+  <h1>Your cart</h1>
+</section>
+{% if items %}
+<form method="post" action="{{ url_for('update_cart') }}">
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Phase</th>
+          <th>Quantity</th>
+          <th>Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in items %}
+        <tr>
+          <td>{{ item.product.name }}</td>
+          <td>{{ item.product.phase }}</td>
+          <td><input class="qty-input" type="number" min="0" name="qty_{{ item.product.id }}" value="{{ item.quantity }}"></td>
+          <td>${{ '%.2f'|format(item.subtotal) }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="cart-footer">
+    <div>
+      <p class="total">Total: ${{ '%.2f'|format(total) }}</p>
+    </div>
+    <div class="hero-actions">
+      <button class="button secondary" type="submit">Update cart</button>
+      <a class="button" href="{{ url_for('checkout') }}">Checkout</a>
+    </div>
+  </div>
+</form>
+{% else %}
+  <div class="card empty-state">
+    <p>Your cart is empty.</p>
+    <a class="button" href="{{ url_for('products') }}">Browse products</a>
+  </div>
+{% endif %}
+{% endblock %}

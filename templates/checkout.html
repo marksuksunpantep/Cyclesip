@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Checkout | Cyclesip{% endblock %}
+{% block content %}
+<section class="checkout-layout">
+  <div>
+    <h1>Checkout</h1>
+    <p>This is a mock checkout for the prototype.</p>
+    <form class="form-card" method="post">
+      <label for="name">Full name</label>
+      <input id="name" name="name" required>
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required>
+      <label for="address">Shipping address</label>
+      <textarea id="address" name="address" rows="4" required></textarea>
+      <button class="button full" type="submit">Place order</button>
+    </form>
+  </div>
+  <aside class="card summary-card">
+    <h3>Order summary</h3>
+    <ul class="summary-list">
+      {% for item in items %}
+      <li><span>{{ item.product.name }} × {{ item.quantity }}</span><strong>${{ '%.2f'|format(item.subtotal) }}</strong></li>
+      {% endfor %}
+    </ul>
+    <p class="total">Total: ${{ '%.2f'|format(total) }}</p>
+  </aside>
+</section>
+{% endblock %}

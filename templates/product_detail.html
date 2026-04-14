@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}{{ product.name }} | Cyclesip{% endblock %}
+{% block content %}
+<section class="detail-layout">
+  <div class="detail-main">
+    <p class="eyebrow">{{ product.phase }}</p>
+    <h1>{{ product.name }}</h1>
+    <p class="price large">${{ '%.2f'|format(product.price) }}</p>
+    <p>{{ product.description }}</p>
+    <h3>Ingredients</h3>
+    <ul>
+      {% for ingredient in product.ingredients %}
+        <li>{{ ingredient }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  <aside class="detail-side card">
+    <h3>Add to cart</h3>
+    <form method="post" action="{{ url_for('add_to_cart', product_id=product.id) }}">
+      <label for="quantity">Quantity</label>
+      <input id="quantity" type="number" name="quantity" min="1" value="1">
+      <button class="button full" type="submit">Add to cart</button>
+    </form>
+  </aside>
+</section>
+{% endblock %}
